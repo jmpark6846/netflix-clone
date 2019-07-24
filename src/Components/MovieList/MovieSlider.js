@@ -32,8 +32,6 @@ class MovieSlider extends React.Component {
       variableWidth: true,
       draggable: false
     };
-    const MOVIE_BASE_URL = "http://image.tmdb.org/t/p/";
-    const POSTER_SIZE = "w185";
 
     const { data, title } = this.props;
     return (
@@ -47,7 +45,7 @@ class MovieSlider extends React.Component {
                 id={item.id}
                 title={item.title}
                 vote_average={item.vote_average}
-                img_url={`${MOVIE_BASE_URL}${POSTER_SIZE}/${item.poster_path}`}
+                poster_path={item.poster_path}
               />
             ))}
           </Slider>

@@ -13,7 +13,6 @@ function App() {
         <Route path="/" exact component={MovieListPage} />
         <Route path="/movie/:id" component={MovieDetailPage} />
       </Router>
-      
     </div>
   );
 }

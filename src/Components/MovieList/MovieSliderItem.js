@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import MoviePoster from "./MoviePoster";
 
-function MovieSliderItem({ id, img_url, title, vote_average, handleClick }) {
+function MovieSliderItem({ id, poster_path, title, vote_average, handleClick }) {
   return (
     <div style={{ width: 185, position: "relative", padding: "0px 2px" }} onClick={()=>handleClick(id)}>
-      <img src={img_url} />
+      <MoviePoster poster_path={poster_path}/>
       <div
         style={{
           position: "absolute",
@@ -25,7 +26,7 @@ function MovieSliderItem({ id, img_url, title, vote_average, handleClick }) {
 
 MovieSliderItem.propTypes = {
   id: PropTypes.number,
-  img_url: PropTypes.string,
+  poster_path: PropTypes.string,
   title: PropTypes.string,
   vote_average: PropTypes.number,
   handleClick: PropTypes.func
