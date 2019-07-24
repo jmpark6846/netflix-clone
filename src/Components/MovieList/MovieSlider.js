@@ -28,15 +28,16 @@ class MovieSlider extends React.Component {
         const MOVIE_BASE_URL = "http://image.tmdb.org/t/p/"
         const POSTER_SIZE = "w185"
     
-        const { data } = this.props
-        return <div>
+        const { data, title } = this.props
+        return <div style={{ position: "relative"}}>
+            <h4 style={{ padding: "0 1rem", margin:"1rem 0"}}>{title}</h4>
             <Slider  {...settings} ref={this.ref}>
                 {data.map(item =>  
                 <div style={{ width: 187 }}>
                     <img src={`${MOVIE_BASE_URL}${POSTER_SIZE}/${item.poster_path}`} />
                 </div>)}
             </Slider>
-            <div style={{ display:"flex",justifyContent: "space-between", position:"relative", top:"-282px", height:"282px", alignItems: "center"}}>
+            <div style={{ display:"flex",justifyContent: "space-between", position:"absolute", bottom:"0px", width: "100%", height:"282px", alignItems: "center"}}>
                 <div className="button" onClick={this.previous}>
                     <IoIosArrowBack style={{ color: "white", height: "2em", width: "2em" }}/>
                 </div>

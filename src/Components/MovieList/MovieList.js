@@ -24,13 +24,13 @@ class MovieList extends React.Component {
       vote_count: 593
     };
     this.state = {
-      movies: [obj, obj, obj, obj,obj,obj, obj, obj, obj,obj,obj, obj, obj, obj,obj]
+      movies: [obj, obj, obj, obj, obj, obj, obj, obj, obj, obj, obj, obj, obj, obj, obj],
     };
   }
 
   async componentDidMount() {
-    let { data: { results } } = await APIClient.get('movie/now_playing')
-    this.setState({ movies: results })
+    // let { data: { results } } = await APIClient.get('movie/now_playing')
+    // this.setState({ movies: results })
     // let res = await APIClient('configuration')
     // console.log(res)
   }
@@ -40,7 +40,11 @@ class MovieList extends React.Component {
     return (
       <React.Fragment>
         {movies ? (
-          <MovieSlider data={movies} />
+          <React.Fragment>
+            <MovieSlider data={movies} title={"Now Playing"}/>
+            <MovieSlider data={movies} title={"Now Playing"}/>
+            <MovieSlider data={movies} title={"Now Playing"} />
+          </React.Fragment>
         ) : (
           <div>not loaded yet</div>
         )}
