@@ -1,6 +1,6 @@
 import React from "react";
-import APIClient from "../../utils/APIClient";
-import MovieSlider from "./MovieSlider";
+import APIClient from "../utils/APIClient";
+import MovieSlider from "../Components/MovieList/MovieSlider";
 
 class MovieList extends React.Component {
   constructor(props) {

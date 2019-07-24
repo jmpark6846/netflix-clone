@@ -1,8 +1,14 @@
 import React from 'react'
+
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 
 const Navbar = () => <header>
-    <div className="headerTitle">Reflix</div>
+    <div className="headerTitle">
+        <Link to="/">
+            Reflix
+        </Link>
+        </div>
     <nav>
         <ul>
             <li>영화</li>
